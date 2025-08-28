@@ -1,0 +1,64 @@
+
+# ================================
+# Definición del ADT Automovil
+# ================================
+class Automovil:
+    def __init__(self, marca, modelo, anio):
+        self.__marca = marca
+        self.__modelo = modelo
+        self.__anio = anio
+
+    # ====== Getters ======
+    def get_marca(self):
+        return self.__marca
+
+    def get_modelo(self):
+        return self.__modelo
+
+    def get_anio(self):
+        return self.__anio
+
+    # ====== Setters ======
+    def set_marca(self, marca):
+        self.__marca = marca
+
+    def set_modelo(self, modelo):
+        self.__modelo = modelo
+
+    def set_anio(self, anio):
+        self.__anio = anio
+
+    # Método para mostrar datos
+    def mostrar(self):
+        return f"{self.__marca} {self.__modelo} ({self.__anio})"
+
+
+# ================================
+# ESTRUCTURA ESTÁTICA
+# ================================
+print("=== ESTRUCTURA ESTÁTICA ===")
+# Creamos un arreglo fijo de 3 automóviles
+autos_estaticos = [None] * 3
+autos_estaticos[0] = Automovil("Toyota", "Corolla", 2020)
+autos_estaticos[1] = Automovil("Nissan", "Versa", 2019)
+autos_estaticos[2] = Automovil("Ford", "Focus", 2018)
+
+for i, auto in enumerate(autos_estaticos):
+    print(f"Auto {i+1}: {auto.mostrar()}")
+
+
+# ================================
+# ESTRUCTURA DINÁMICA
+# ================================
+print("\n=== ESTRUCTURA DINÁMICA ===")
+# Creamos una lista dinámica (sin límite de tamaño)
+autos_dinamicos = []
+autos_dinamicos.append(Automovil("Chevrolet", "Onix", 2021))
+autos_dinamicos.append(Automovil("Kia", "Rio", 2022))
+autos_dinamicos.append(Automovil("Hyundai", "Elantra", 2023))
+
+# Podemos seguir agregando autos sin límite
+autos_dinamicos.append(Automovil("Mazda", "3", 2024))
+
+for i, auto in enumerate(autos_dinamicos):
+    print(f"Auto {i+1}: {auto.mostrar()}")
